@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gallery | The Civil Media</title>
+<link rel="icon" href="assets/images/logo.jpeg"><link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<div id="siteHeader"></div>
+<main class="container page-content">
+  <div class="page-banner"><span class="eyebrow">MULTIMEDIA</span><h1>Video / Photo Gallery</h1><p>Visual stories from The Civil Media.</p></div>
+  <div class="gallery-tabs">
+    <button class="gallery-tab active" data-type="all">All</button>
+    <button class="gallery-tab" data-type="photo">Photos</button>
+    <button class="gallery-tab" data-type="video">Videos</button>
+  </div>
+  <div id="galleryGrid" class="gallery-grid"></div>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/js/app.js"></script>
+<script>
+document.addEventListener("DOMContentLoaded",()=>window.CivilMedia.renderGalleryPage());
+</script>
+</body>
+</html>

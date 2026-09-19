@@ -1,158 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="The Civil Media Private Limited - News from Nepal and around the world.">
-  <title>The Civil Media Private Limited</title>
-  <link rel="icon" href="assets/images/logo.jpeg">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="description" content="The Civil Media Private Limited - Nepal, politics, business, international, entertainment, sports and technology news.">
+<title>The Civil Media Private Limited</title><link rel="icon" href="assets/images/logo.jpeg"><link rel="stylesheet" href="assets/css/style.css"></head>
 <body>
-  <div class="top-strip">
-    <div class="container top-strip-inner">
-      <span id="currentDate">Sunday, September 20, 2026</span>
-      <span>Bhaktapur, Nepal</span>
-    </div>
-  </div>
-
-  <header class="site-header">
-    <div class="container header-main">
-      <a class="brand" href="index.html" aria-label="The Civil Media home">
-        <img src="assets/images/logo.jpeg" alt="The Civil Media logo">
-        <div>
-          <div class="brand-name">THE CIVIL MEDIA</div>
-          <div class="brand-subtitle">PRIVATE LIMITED</div>
-        </div>
-      </a>
-
-      <div class="header-actions">
-        <button class="icon-btn" id="searchToggle" aria-label="Open search">⌕</button>
-        <a class="admin-link" href="admin/login.html">Admin</a>
-      </div>
-    </div>
-
-    <nav class="main-nav">
-      <div class="container nav-inner">
-        <button class="mobile-menu-btn" id="mobileMenuBtn">☰ Menu</button>
-        <div class="nav-links" id="navLinks">
-          <a href="index.html" class="active">Home</a>
-          <a href="index.html?category=Nepal">Nepal</a>
-          <a href="index.html?category=Politics">Politics</a>
-          <a href="index.html?category=Business">Business</a>
-          <a href="index.html?category=World">World</a>
-          <a href="index.html?category=Sports">Sports</a>
-          <a href="index.html?category=Entertainment">Entertainment</a>
-          <a href="index.html?category=Technology">Technology</a>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <section class="breaking-bar">
-    <div class="container breaking-inner">
-      <span class="breaking-label">BREAKING</span>
-      <div class="ticker-window">
-        <div id="breakingTicker" class="ticker-track"></div>
-      </div>
-    </div>
-  </section>
-
-  <main class="container page-content">
-    <section class="search-panel hidden" id="searchPanel">
-      <form id="searchForm">
-        <input id="searchInput" type="search" placeholder="Search news..." autocomplete="off">
-        <button type="submit" class="btn btn-primary">Search</button>
-        <button type="button" class="btn btn-light" id="closeSearch">Close</button>
-      </form>
-    </section>
-
-    <section class="hero-section" id="heroSection"></section>
-
-    <section class="section-block">
-      <div class="section-heading">
-        <h2>Latest News</h2>
-        <span class="section-line"></span>
-      </div>
-      <div id="latestNews" class="news-grid"></div>
-    </section>
-
-    <section class="category-section">
-      <div class="category-header">
-        <h2>Nepal</h2>
-        <a href="index.html?category=Nepal">View all →</a>
-      </div>
-      <div id="nepalNews" class="news-grid compact-grid"></div>
-    </section>
-
-    <section class="category-section">
-      <div class="category-header">
-        <h2>Business</h2>
-        <a href="index.html?category=Business">View all →</a>
-      </div>
-      <div id="businessNews" class="news-grid compact-grid"></div>
-    </section>
-
-    <section class="category-section">
-      <div class="category-header">
-        <h2>World</h2>
-        <a href="index.html?category=World">View all →</a>
-      </div>
-      <div id="worldNews" class="news-grid compact-grid"></div>
-    </section>
-
-    <section class="newsletter">
-      <div>
-        <span class="eyebrow">STAY INFORMED</span>
-        <h2>Subscribe to The Civil Media</h2>
-        <p>Get important news and updates delivered to your inbox.</p>
-      </div>
-      <form id="newsletterForm" class="newsletter-form">
-        <input type="email" id="newsletterEmail" placeholder="Your email address" required>
-        <button class="btn btn-primary" type="submit">Subscribe</button>
-      </form>
-    </section>
-
-    <section class="no-results hidden" id="noResults">
-      <h2>No news found</h2>
-      <p>Try another search term or category.</p>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <img class="footer-logo" src="assets/images/logo.jpeg" alt="The Civil Media">
-        <p id="footerAbout">The Civil Media Private Limited is a news platform based in Bhaktapur, Nepal.</p>
-      </div>
-      <div>
-        <h3>Categories</h3>
-        <a href="index.html?category=Nepal">Nepal</a>
-        <a href="index.html?category=Politics">Politics</a>
-        <a href="index.html?category=Business">Business</a>
-        <a href="index.html?category=World">World</a>
-      </div>
-      <div>
-        <h3>More</h3>
-        <a href="index.html?category=Sports">Sports</a>
-        <a href="index.html?category=Entertainment">Entertainment</a>
-        <a href="index.html?category=Technology">Technology</a>
-        <a href="admin/login.html">Admin</a>
-      </div>
-      <div>
-        <h3>Contact</h3>
-        <p id="footerAddress">Bhaktapur, Nepal</p>
-        <p id="footerEmail">info@thecivilmedia.com</p>
-        <p id="footerPhone">+977-XXXXXXXXXX</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container">
-        © <span id="footerYear">2026</span> The Civil Media Private Limited. All rights reserved.
-      </div>
-    </div>
-  </footer>
-
-  <script src="assets/js/app.js"></script>
-</body>
-</html>
+<div id="siteHeader"></div>
+<main class="container page-content">
+<section class="search-panel hidden" id="searchPanel"><form id="searchForm"><input id="searchInput" type="search" placeholder="Search news..." autocomplete="off"><button type="submit" class="btn btn-primary">Search</button><button type="button" class="btn btn-light" id="closeSearch">Close</button></form></section>
+<section class="hero-section" id="heroSection"></section>
+<div class="ad-wrap container"><div class="ad-slot" id="midAd">Advertisement • 970 × 90</div></div>
+<section class="section-block"><div class="section-heading"><h2>Latest News</h2><span class="section-line"></span></div><div id="latestNews" class="news-grid"></div></section>
+<section class="category-section"><div class="category-header"><h2>🇳🇵 Nepal News</h2><a href="index.html?category=Nepal">View all →</a></div><div id="nepalNews" class="news-grid compact-grid"></div></section>
+<section class="category-section"><div class="category-header"><h2>🏛️ Politics</h2><a href="index.html?category=Politics">View all →</a></div><div id="politicsNews" class="news-grid compact-grid"></div></section>
+<section class="category-section"><div class="category-header"><h2>💼 Business</h2><a href="index.html?category=Business">View all →</a></div><div id="businessNews" class="news-grid compact-grid"></div></section>
+<section class="category-section"><div class="category-header"><h2>🌎 International</h2><a href="index.html?category=International">View all →</a></div><div id="internationalNews" class="news-grid compact-grid"></div></section>
+<section class="category-section"><div class="category-header"><h2>🎬 Entertainment</h2><a href="index.html?category=Entertainment">View all →</a></div><div id="entertainmentNews" class="news-grid compact-grid"></div></section>
+<section class="category-section"><div class="category-header"><h2>⚽ Sports</h2><a href="index.html?category=Sports">View all →</a></div><div id="sportsNews" class="news-grid compact-grid"></div></section>
+<section class="category-section"><div class="category-header"><h2>💻 Technology</h2><a href="index.html?category=Technology">View all →</a></div><div id="technologyNews" class="news-grid compact-grid"></div></section>
+<section class="newsletter"><div><span class="eyebrow">STAY INFORMED</span><h2>Subscribe to The Civil Media</h2><p>Get important news and updates delivered to your inbox.</p></div><form id="newsletterForm" class="newsletter-form"><input type="email" id="newsletterEmail" placeholder="Your email address" required><button class="btn btn-primary" type="submit">Subscribe</button></form></section>
+<section class="no-results hidden" id="noResults"><h2>No news found</h2><p>Try another search term or category.</p></section>
+</main>
+<div id="siteFooter"></div>
+<script src="assets/js/app.js"></script>
+<script>
+document.getElementById("newsletterForm")?.addEventListener("submit",e=>{e.preventDefault();const email=document.getElementById("newsletterEmail").value.trim();const x=JSON.parse(localStorage.getItem("civilMediaSubscribers")||"[]");if(email&&!x.includes(email))x.push(email);localStorage.setItem("civilMediaSubscribers",JSON.stringify(x));alert("Thank you for subscribing!");e.target.reset()});
+</script>
+</body></html>
