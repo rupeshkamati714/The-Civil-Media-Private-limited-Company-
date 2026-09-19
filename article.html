@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Article | The Civil Media</title>
+  <link rel="icon" href="assets/images/logo.jpeg">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <style>
+    .article-page { max-width: 900px; margin: 0 auto; }
+    .article-card { background:#fff; padding:30px; border-radius:12px; box-shadow:var(--shadow); }
+    .article-card h1 { font-family:"Playfair Display",serif; font-size:clamp(32px,5vw,52px); line-height:1.1; margin:12px 0; }
+    .article-image { width:100%; max-height:560px; object-fit:cover; border-radius:10px; margin:22px 0; }
+    .article-content { font-family:Georgia,serif; font-size:18px; line-height:1.85; white-space:pre-wrap; }
+    .back-link { display:inline-block; margin-bottom:15px; color:var(--navy); font-weight:700; font-size:13px; }
+  </style>
+</head>
+<body>
+  <div class="top-strip"><div class="container top-strip-inner"><span>The Civil Media</span><span>Bhaktapur, Nepal</span></div></div>
+  <header class="site-header">
+    <div class="container header-main">
+      <a class="brand" href="index.html">
+        <img src="assets/images/logo.jpeg" alt="The Civil Media logo">
+        <div><div class="brand-name">THE CIVIL MEDIA</div><div class="brand-subtitle">PRIVATE LIMITED</div></div>
+      </a>
+      <a class="admin-link" href="admin/login.html">Admin</a>
+    </div>
+    <nav class="main-nav"><div class="container nav-inner"><div class="nav-links" style="display:flex">
+      <a href="index.html">Home</a><a href="index.html?category=Nepal">Nepal</a><a href="index.html?category=Politics">Politics</a><a href="index.html?category=Business">Business</a><a href="index.html?category=World">World</a><a href="index.html?category=Sports">Sports</a><a href="index.html?category=Entertainment">Entertainment</a><a href="index.html?category=Technology">Technology</a>
+    </div></div></nav>
+  </header>
+  <main class="container page-content">
+    <div class="article-page" id="article"></div>
+  </main>
+  <footer class="site-footer"><div class="footer-bottom"><div class="container">© <span id="year"></span> The Civil Media Private Limited. All rights reserved.</div></div></footer>
+  <script>
+    const news = JSON.parse(localStorage.getItem("civilMediaNews") || "[]");
+    const id = new URLSearchParams(location.search).get("id");
+    const item = news.find(n => n.id === id && n.status === "published" && !n.archived);
+    const target = document.getElementById("article");
+    const fallback = "https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1200&q=80";
+    const esc = v => String(v||"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[c]));
+    if (!item) {
+      target.innerHTML = '<div class="article-card"><h1>Article not found</h1><p>The requested article is unavailable.</p><a class="back-link" href="index.html">← Back to home</a></div>';
+    } else {
+      document.title = item.title + " | The Civil Media";
+      target.innerHTML = `
+        <a class="back-link" href="index.html">← Back to home</a>
+        <article class="article-card">
+          <span class="category-label">${esc(item.category)}</span>
+          <h1>${esc(item.title)}</h1>
+          <div class="meta">${new Date(item.createdAt).toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"})} · ${esc(item.author || "The Civil Media")}</div>
+          <img class="article-image" src="${esc(item.image || fallback)}" onerror="this.src='${fallback}'" alt="${esc(item.title)}">
+          <div class="article-content">${esc(item.content || item.excerpt || "")}</div>
+        </article>`;
+    }
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
